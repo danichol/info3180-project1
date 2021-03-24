@@ -24,6 +24,50 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
+@app.route('/property',methods=['GET', 'POST'])
+def addproperty():
+    form = PropertyForm()
+
+    if request.method == 'POST:
+        if form.validate_on_submit():
+        title = form.title.data
+        description = form.description.data
+        bedroom=form.bedroom.data
+        bathroom = form.bathroom.data
+        price = form.price.data
+        ptype = form.ptype.data
+        location = form.location.data
+        img = form.photo.data
+        
+        img_name = secure_filename(img.filename)
+        img.save(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
+
+        new_property = Property(title, description, bedroom, bathroom, price, ptype, location, img_name)
+        db.session.add(new_property)
+        db.session.commit()
+
+        flash('New property successfully added.','success')
+        return redirect(url_for('properties'))
+    return render_template('property.html',form=form)    
+,
+
+## View All Properties 
+@app.route('/properties')
+def properties()"
+    return render_template('properties.html')
+
+## Individual Property
+@app.route('/property/propertyid')
+def propertyid()
+    indprop = Property.query.filter_by(propertyid=id).first()
+    return render_template('indproperty.html',indprop=indprop)
+
+## Upload Pictures 
+@app.route('/uploads/<filename>')
+def get_image(filename):
+    rootdirectory = os.getcwd()
+    return  send_from_directory(os.path.join(rootdirectory,app.config['UPLOAD_FOLDER']),filename)
+
 
 ###
 # The functions below should be applicable to all Flask apps.
