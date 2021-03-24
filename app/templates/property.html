@@ -1,0 +1,65 @@
+{% extends 'base.html'}
+
+{% block main %}
+
+<h1 class = "header"> Add New Property </h1>
+
+<form method="POST" action="/property">
+    {{ form.csrf_token}}
+
+    <div class="add-prop">
+        <div class = "ptitle">
+            {{ form.title.label (class="pf-label")}}
+            <br>
+            {{form.title (class="pf-field")}}
+        </div>
+
+        <div class = "pdesc">
+            {{ form.description.label (class="pf-label")}}
+            <br>
+            {{form.description (class="pf-field")}}
+        </div>
+
+        <div class = "pf-grid">
+            <div class ="bedrooms">
+                {{form.bedroom.label (class="pf-label")}}
+                <br>
+                {{form.bedroom (class="pf-field")}}
+            </div>
+            
+            <div class = "bathrooms">
+                {{form.bathroom.label (class="pf-label")}}
+                <br>
+                {{form.bathroom (class="pf-field")}}
+            </div>
+
+            <div class = "price">
+                {{form.price.label (class="pf-label")}}
+                <br>
+                {{form.price (class="pf-field")}}
+            </div>
+
+            <div class ="pr-type">
+                {{form.type.label (class="pf-label")}}
+                <br>
+                {{form.type (class="pf-field")}}
+            </div>
+        </div>
+
+        <div class="location">
+            {{form.location.label (class="pf-label")}}
+            <br>
+            {{form.type (class="pf-field")}}
+        </div>
+
+        <div class="pf-photo">
+            {{form.photo.label (class="pf-label")}}
+            <br>
+            {{form.photo (class="pf-field")}}
+        </div>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn">Add Property</button>
+</form>
+{% endblock %}
