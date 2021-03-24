@@ -1,0 +1,26 @@
+{% extends 'base.html'}
+
+{% block main %}
+{% include 'flash.html'}
+
+<div class="header">
+    <h1> Properties </h1>
+</div>
+
+<div class="properties">
+    {% for property in properties %}
+    <div class ="card">
+        <img class ="img" src ="{{url_for('get_image'. filename=property.photo) }}" alt= "Property Photo">
+        <div class = "property-description">
+            <div class ="p-title">{{property.title}}</div>
+            <div class ="p-location">{{property.location}}</div>
+            <div class="p-price">{{property.price}}</div>
+        </div>
+        <br>
+
+        <a href="{{url_for('id', propertyid=prop.id)}}">div class="p-view"> View Property</a>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
