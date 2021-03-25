@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% include 'flashmsgs.html'%}
+
+<div class="page-header">
+    <h1> View Property </h1>
+</div>
+
+<div class = 'property'>
+
+    <img class ='ind-img' src = "{{ url_for('getimage', filename= property.photo) }}" alt ="Property Photo">
+    
+    <div class = "ind-property">
+        <div class = "property-title">{{property.title}}</div>
+
+        <div class = "p-price-type">
+            <div class = "p-price">{{property.price}}</div>
+            <div class = "p-type">{{property.type}}</div>
+        </div>
+       
+        <div class = "p-description">{{property.description}}</div>
+
+        <div class = "p-bedrm-bathrm">
+            <div class = "bedroom">{{property.bedroom}} Bedrooms</div>
+            <div class = "bathroom">{{property.bathroom}} Bathrooms</div>
+        </div>
+
+        <div class = "location">{{property.location}}</div>
+
+        <button class="btn" type="submit">Email Realtor</button>
+
+    </div>
+</div>
+{% endblock %}
