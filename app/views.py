@@ -52,12 +52,12 @@ def addproperty():
 
 ## View All Properties 
 @app.route('/properties')
-def properties()"
+def properties():
     return render_template('properties.html')
 
 ## Individual Property
 @app.route('/property/propertyid')
-def propertyid()
+def propertyid():
     indprop = Property.query.filter_by(propertyid=id).first()
     return render_template('indproperty.html',indprop=indprop)
 
