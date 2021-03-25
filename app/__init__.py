@@ -1,6 +1,6 @@
 from flask import Flask
 from .config import Config
-from flask_login import LoginManager
+from flask_Login import LoginManager
 from flask_SQLAlchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 
