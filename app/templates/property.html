@@ -1,6 +1,7 @@
 {% extends 'base.html'}
 
 {% block main %}
+{% include 'flashmsgs.html'%}
 
 <h1 class = "header"> Add New Property </h1>
 
@@ -22,38 +23,38 @@
 
         <div class = "pf-grid">
             <div class ="bedrooms">
-                {{form.bedroom.label (class="pf-label")}}
+                <h3>{{form.bedroom.label (class="pf-label")}}</h3>
                 <br>
                 {{form.bedroom (class="pf-field")}}
             </div>
             
             <div class = "bathrooms">
-                {{form.bathroom.label (class="pf-label")}}
+                <h3>{{form.bathroom.label (class="pf-label")}}</h3>
                 <br>
                 {{form.bathroom (class="pf-field")}}
             </div>
 
             <div class = "price">
-                {{form.price.label (class="pf-label")}}
+                <h3>{{form.price.label (class="pf-label")}}</h3>
                 <br>
                 {{form.price (class="pf-field")}}
             </div>
 
             <div class ="pr-type">
-                {{form.type.label (class="pf-label")}}
+                <h3>{{form.type.label (class="pf-label")}}</h3>
                 <br>
                 {{form.type (class="pf-field")}}
             </div>
         </div>
 
         <div class="location">
-            {{form.location.label (class="pf-label")}}
+            <h3>{{form.location.label (class="pf-label")}}</h3>
             <br>
             {{form.location (class="pf-field")}}
         </div>
 
         <div class="pf-photo">
-            {{form.photo.label (class="pf-label")}}
+            <h3>{{form.photo.label (class="pf-label")}}</h3>
             <br>
             {{form.photo (class="pf-field")}}
         </div>
