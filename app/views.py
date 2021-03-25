@@ -28,7 +28,7 @@ def about():
 def addproperty():
     form = PropertyForm()
 
-    if request.method == 'POST:
+    if request.method == 'POST':
         if form.validate_on_submit():
         title = form.title.data
         description = form.description.data
