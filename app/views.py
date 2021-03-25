@@ -49,7 +49,6 @@ def addproperty():
             flash('New property successfully added.','success')
         return redirect(url_for('properties'))
     return render_template('property.html',form=form)    
-,
 
 ## View All Properties 
 @app.route('/properties')
