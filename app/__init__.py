@@ -1,12 +1,12 @@
 from flask import Flask
-from Flask_SQLAlchemy import SQLAlchemy 
+from flask_sqlalchemy import sqlalchemy 
 from .config import Config
 
 from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 
-db= SQLAlchemy(app)
+db= sqlalchemy(app)
 csrf = CSRFProtect(app)
 
 app.config.from_object(Config)
