@@ -9,7 +9,7 @@ import psycopg2
 from app import app,db
 from flask import render_template, request, redirect, url_for
 from app.models import Property
-from app.fomrs import PropertyForm
+from app.forms import PropertyForm
 from werkzeug.utils import secure_filename
 
 ###
