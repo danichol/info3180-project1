@@ -5,7 +5,6 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
 import os
-import psycopg2
 from app import app,db
 from flask import render_template, request, redirect, url_for
 from app.models import Property
