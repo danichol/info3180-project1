@@ -1,5 +1,5 @@
 from flask import Flask
-from Flask-SQLAlchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
 
 from app import app
