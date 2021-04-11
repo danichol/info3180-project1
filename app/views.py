@@ -30,25 +30,24 @@ def about():
 def addproperty():
     form = PropertyForm()
 
-    if request.method == 'POST':
-        if form.validate_on_submit():
-            title = form.title.data
-            description = form.description.data
-            bedroom=form.bedroom.data
-            bathroom = form.bathroom.data
-            price = form.price.data
-            ptype = form.ptype.data
-            location = form.location.data
-            img = form.photo.data
-            
-            img_name = secure_filename(img.filename)
-            img.save(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
+    if request.method == 'POST' and form.validate_on_submit():
+        title = form.title.data
+        description = form.description.data
+        bedroom=form.bedroom.data
+        bathroom = form.bathroom.data
+        price = form.price.data
+        ptype = form.ptype.data
+        location = form.location.data
+        img = form.photo.data
+          
+        img_name = secure_filename(img.filename)
+        img.save(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
 
-            new_property = Property(title, description, bedroom, bathroom, price, ptype, location, img_name)
-            db.session.add(new_property)
-            db.session.commit()
+        new_property = Property(title, description, bedroom, bathroom, price, ptype, location, img_name)
+        db.session.add(new_property)
+        db.session.commit()
 
-            flash('New property successfully added.','success')
+        flash('New property successfully added.','success')
         return redirect(url_for('properties'))
     return render_template('property.html',form=form)    
 
