@@ -6,17 +6,17 @@
 <h1 class = "header"> Add New Property </h1>
 
 <form method="POST" action="/property">
-    {{ form.csrf_token}}
+    {{form.csrf_token}}
 
     <div class="add-prop">
         <div class = "ptitle">
-            {{ form.title.label (class="pf-label")}}
+            {{form.title.label (class="pf-label")}}
             <br>
             {{form.title (class="pf-field")}}
         </div>
 
         <div class = "pdesc">
-            {{ form.description.label (class="pf-label")}}
+            {{form.description.label (class="pf-label")}}
             <br>
             {{form.description (class="pf-field")}}
         </div>
